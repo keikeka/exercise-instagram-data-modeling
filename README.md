@@ -1,39 +1,44 @@
-# Create the database model for Instagram
+<p>
+<h4 align="center">4Geeks Academy</h4>
+<h2 align="center" style="margin: 0">Database model for Instagram</h2>
+<h3 align="center" style="margin-top: 0">Keili Rosales</h3>
+</p>
 
-**Important**: To do this activity you need to `fork` this repo into your **Github** account and then open the forked repo on Gitpod.
+## Objective
 
-Inside he `src/models.py` file you will find a couple of classes describing an example database.
+The objective of this exercise is to simulate the Instagram data model that allows the user to log in, add username, name, email and password, as well as post an image with its description and also be able to comment on this and other posts. 
 
-Here is a 4min video explaining what UML is: [https://www.youtube.com/watch?v=UI6lqHOVHic](https://www.youtube.com/watch?v=UI6lqHOVHic)
+The project uses Python's SQLAlchemy library to generate the database and contains the following tables:
 
-We are going to be creating the Entity Relationship Diagram for Instagram Database, a very similar diagram to this one:
+**User table**
+Stores four main pieces of information: a username, which must be unique, a name (the person can add first and last name or just the first one), an email and a password. In addition to this, the User table establishes two relatable columns: one to track each user's Post and another to track the Followers.
 
-![Instagram Diagram](https://github.com/breatheco-de/exercise-instagram-data-modeling/blob/master/assets/example.png?raw=true)
-[Click to open diagram](https://app.quickdatabasediagrams.com/#/d/LxNXQZ)
+**Post Table**
+Simply stores a description of the post, an image address and the user.id. In addition, it establishes a relationship with the Comment table to track each comment the post receives.
 
-> 🔥 You can use this FREE tool to practice your diagram for the first time: https://app.quickdatabasediagrams.com/#/d/
+**Comment table**
+Simply stores a comment and the id of the commenting user and the commented post.
 
+**Follower Table**
+Stores foreign keys about the User, the follower represents someone who is following someone and following who is being followed.
 
-## 💻 Installation
+The tables can be viewed in the src/models.py file.
 
-1. Get inside the environment `$ pipenv shell`
+## Application
 
+1. Enter the environment `$ pipenv shell`
 2. Install all dependencies `$ pipenv install`
+3. Generate the diagram as many times as necessary `$ python src/models.py`
+4. Open the diagram.png file to see the UML diagram.
 
-3. Generate de diagram as many times as you need `$ python src/models.py`
+## Technologies
 
-4. Open the file `diagram.png` to check out your UML diagram!
+- SQLAlchemy
+- Flask
+- Python
 
+## Contributions
 
-## 📝Instructions
+I'd love to get your appreciation or report on the code at https://github.com/keikeka/exercise-instagram-data-modeling
 
-Your Job is to update the `src/models.py` file with the code needed to replicate the instagram data model.
-
-The project is using the SQLAlchemy Python library to generate the database.
-
-- What tables do you think instagram might have on its database: E.g: Post, User, etc.?
-- What properties should go inside the user? or inside the Post table?
-- Please add at least 4 models with all of its properties.
-- Degenerate the diagram.png file at the end by running `$ python3 models.py` on the console.
-
-
+Thank you so much!
